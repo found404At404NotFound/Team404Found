@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team 404 Found</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -22,12 +22,13 @@
       --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      /* Background from 1st Page */
       background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
       color: var(--text-main);
       line-height: 1.6;
@@ -39,7 +40,6 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 60px 20px;
-      /* Entry Animation from 2nd Page */
       animation: pageReveal 0.8s ease-out forwards;
     }
 
@@ -103,7 +103,6 @@
       background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);
     }
 
-    /* --- TEAM LAYOUT: Modern Flex-Row --- */
     .team-container {
       display: flex;
       gap: 15px;
@@ -130,7 +129,6 @@
       overflow: hidden;
     }
 
-    /* Hover Animations from 2nd Page */
     .member-link:hover .member {
       transform: translateY(-8px);
       border-color: var(--primary);
@@ -161,7 +159,6 @@
       display: block;
     }
 
-    /* --- PROJECTS GRID & ANIMATIONS --- */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -210,7 +207,6 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* --- MOBILE RESPONSIVE LOGIC --- */
     @media (max-width: 850px) {
       .team-container {
         display: grid;
@@ -285,31 +281,30 @@
           <span class="member-role">Frontend Dev</span>
         </div>
       </a>
-
     </div>
 
     <div class="section-title">Our Projects</div>
     <div class="projects-grid">
       
       <div class="project-card">
+
         <span class="tag">NASA Space Apps 2025</span>
         <h3>AtmosAI — NASA Data Explorer</h3>
         <p>An AI-powered research assistant designed to search, summarize, and interpret scientific papers from NASA’s open-access databases using fuzzy matching and NLP.</p>
         <div style="margin-top: 15px;">
-            <a href="https://youtu.be/SmY1-PLS79c" target="_blank" style="color: #ef4444; text-decoration: none; font-size: 0.8rem; font-weight: 600;">▶ WATCH DEMO VIDEO</a>
+          <a href="https://youtu.be/SmY1-PLS79c" target="_blank" style="color: #ef4444; text-decoration: none; font-size: 0.8rem; font-weight: 600;">▶ WATCH DEMO VIDEO</a>
         </div>
       </div>
 
       <div class="project-card">
-        <span class="tag">Active Development</span>
-        <h3>Sentinel Shield</h3>
-        <p>An automated vulnerability scanner that identifies XSS and SQL injection points in real-time within decentralized environments.</p>
+        <span class="tag">AiChatbot</span>
+        <h3>AiChatbot Using Gemini Api</h3>
+        <p>An AI-powered chatbot built with Gemini API to make conversations smarter, faster, and more natural.</p>
       </div>
-
     </div>
 
     <footer>
-        &copy; 2026 Team 404 Found. Built with security in mind.
+      &copy; 2026 Team 404 Found. Built with security in mind.
     </footer>
   </div>
 
