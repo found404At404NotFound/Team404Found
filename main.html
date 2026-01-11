@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team 404 Found</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.3);
+      --bg-dark: #020617;
+      --card-bg: #0f172a;
+      --text-main: #e5e7eb;
+      --text-dim: #94a3b8;
+      --backend-color: #22c55e;
+      --frontend-color: #f59e0b;
+      --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      /* Background from 1st Page */
+      background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      /* Entry Animation from 2nd Page */
+      animation: pageReveal 0.8s ease-out forwards;
+    }
+
+    @keyframes pageReveal {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+      color: var(--primary);
+      margin: 0;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-shadow: 0 0 20px var(--primary-glow);
+    }
+
+    .subtitle {
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin: 20px auto;
+      border-radius: 2px;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .about {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 40px 0 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex-grow: 1;
+      background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);
+    }
+
+    /* --- TEAM LAYOUT: Modern Flex-Row --- */
+    .team-container {
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+      margin-bottom: 60px;
+    }
+
+    .member-link {
+      flex: 1;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .member {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 25px 10px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Hover Animations from 2nd Page */
+    .member-link:hover .member {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 30px -10px var(--primary-glow);
+      background: rgba(56, 189, 248, 0.05);
+    }
+
+    .member::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 3px;
+    }
+
+    .backend::before { background: var(--backend-color); }
+    .frontend::before { background: var(--frontend-color); }
+
+    .member-name {
+      font-weight: 600;
+      color: #fff;
+      display: block;
+      font-size: 1rem;
+    }
+
+    .member-role {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 5px;
+      display: block;
+    }
+
+    /* --- PROJECTS GRID & ANIMATIONS --- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 30px;
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+      background: rgba(15, 23, 42, 0.9);
+      border-color: var(--primary-glow);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* --- MOBILE RESPONSIVE LOGIC --- */
+    @media (max-width: 850px) {
+      .team-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .member-link { width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 2.5rem; }
+    }
+  </style>
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>404 Found</h1>
+      <div class="subtitle">Cyber Security Project Team</div>
+      <div class="divider"></div>
+      <p class="about">
+        We are a group of undergraduate students dedicated to building 
+        resilient digital ecosystems. Our approach integrates offensive security 
+        mindsets with defensive engineering.
+      </p>
+    </header>
+
+    <div class="section-title">Our Team</div>
+    <div class="team-container">
+      
+      <a href="URL_FOR_JAMES" class="member-link">
+        <div class="member backend">
+          <span class="member-name">James</span>
+          <span class="member-role">Backend Dev</span>
+        </div>
+      </a>
+
+      <a href="URL_FOR_USHA" class="member-link">
+        <div class="member backend">
+          <span class="member-name">Usha</span>
+          <span class="member-role">Backend Dev</span>
+        </div>
+      </a>
+
+      <a href="URL_FOR_SPANDANA" class="member-link">
+        <div class="member backend">
+          <span class="member-name">Spandana</span>
+          <span class="member-role">Backend Dev</span>
+        </div>
+      </a>
+
+      <a href="URL_FOR_VINAY" class="member-link">
+        <div class="member frontend">
+          <span class="member-name">Vinay</span>
+          <span class="member-role">Frontend Dev</span>
+        </div>
+      </a>
+
+      <a href="https://pranithk.netlify.app" target="_blank" class="member-link">
+        <div class="member frontend">
+          <span class="member-name">Pranith</span>
+          <span class="member-role">Frontend Dev</span>
+        </div>
+      </a>
+
+      <a href="URL_FOR_ROHINI" class="member-link">
+        <div class="member frontend">
+          <span class="member-name">Rohini</span>
+          <span class="member-role">Frontend Dev</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="section-title">Our Projects</div>
+    <div class="projects-grid">
+      
+      <div class="project-card">
+        <span class="tag">NASA Space Apps 2025</span>
+        <h3>AtmosAI — NASA Data Explorer</h3>
+        <p>An AI-powered research assistant designed to search, summarize, and interpret scientific papers from NASA’s open-access databases using fuzzy matching and NLP.</p>
+        <div style="margin-top: 15px;">
+            <a href="https://youtu.be/SmY1-PLS79c" target="_blank" style="color: #ef4444; text-decoration: none; font-size: 0.8rem; font-weight: 600;">▶ WATCH DEMO VIDEO</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">Active Development</span>
+        <h3>Sentinel Shield</h3>
+        <p>An automated vulnerability scanner that identifies XSS and SQL injection points in real-time within decentralized environments.</p>
+      </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Team 404 Found. Built with security in mind.
+    </footer>
+  </div>
+
+</body>
+</html>
