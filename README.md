@@ -1,1 +1,10 @@
-This project is a modern, responsive landing page for Team 404 Found, a group of undergraduate students specializing in cyber security and digital engineering. The page serves as a professional portfolio, featuring a sleek "cyber-dark" aesthetic with glassmorphism effects and smooth animations. It highlights the team's core mission of building resilient digital ecosystems, showcases individual member roles across frontend and backend development, and provides an interactive display of their key projects, such as the AI-powered AtmosAI and the Sentinel Shield vulnerability scanner.
+# Team 404 Found Portfolio
+
+This is a simple, modern landing page for our cyber security project team. 
+
+It highlights:
+* **Who we are:** A group of students building secure digital systems.
+* **Our Team:** A quick look at our frontend and backend developers.
+* **Our Projects:** Links and descriptions for AtmosAI, Sentinel Shield, and our Gemini AI Chatbot.
+
+Built with: HTML5, CSS3, and Google Fonts.
